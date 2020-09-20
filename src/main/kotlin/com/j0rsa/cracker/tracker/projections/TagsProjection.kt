@@ -5,7 +5,7 @@ import com.j0rsa.cracker.tracker.Event
 import com.j0rsa.cracker.tracker.HabitCreated
 import com.j0rsa.cracker.tracker.service.CacheService
 import io.vertx.core.Vertx
-import io.vertx.kafka.client.consumer.KafkaConsumer
+import org.apache.kafka.clients.consumer.KafkaConsumer
 
 class TagsProjection(val vertx: Vertx) {
 	private val config = mapOf(
@@ -14,26 +14,25 @@ class TagsProjection(val vertx: Vertx) {
 		"value.deserializer" to "org.apache.kafka.common.serialization.StringDeserializer",
 		"group.id" to "my_group",
 	)
-	private val consumer = KafkaConsumer.create<String, Event>(vertx, config)
 	fun start() {
 		//TODO: replace with event bus (and kafka under kafka bridge)
-		consumer.handler { record ->
-			when (val event = record.value()) {
-				is HabitCreated -> CacheService.sadd(listOf(event)) {
-					it.userId.value.toString() to it.tags.toSet()
-				}
-				is TagActionCreated -> CacheService.sadd(listOf(event)) {
-					it.userId.value.toString() to it.tags.toSet()
-				}
-				else -> {
-				}
-			}
-		}
-		consumer.subscribe("events") {
-			if (it.succeeded()) {
-				println("Subscribed")
-			}
-		}
+//		consumer.handler { record ->
+//			when (val event = record.value()) {
+//				is HabitCreated -> CacheService.sadd(listOf(event)) {
+//					it.userId.value.toString() to it.tags.toSet()
+//				}
+//				is TagActionCreated -> CacheService.sadd(listOf(event)) {
+//					it.userId.value.toString() to it.tags.toSet()
+//				}
+//				else -> {
+//				}
+//			}
+//		}
+//		consumer.subscribe("events") {
+//			if (it.succeeded()) {
+//				println("Subscribed")
+//			}
+//		}
 
 	}
 }

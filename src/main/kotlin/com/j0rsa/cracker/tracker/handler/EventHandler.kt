@@ -5,7 +5,6 @@ import com.j0rsa.cracker.tracker.Logging
 import com.j0rsa.cracker.tracker.logger
 import io.vertx.core.Vertx
 import io.vertx.core.eventbus.MessageConsumer
-import io.vertx.kafka.client.consumer.KafkaConsumer
 
 const val ACTIONS = "actions:get"
 
@@ -31,5 +30,5 @@ interface EventHandlerSyntax {
 }
 
 interface KafkaSyntax {
-	val consumer: KafkaConsumer<String, Event>
+//	val consumer: KafkaConsumer<String, Event>
 }

@@ -52,7 +52,6 @@ dependencies {
     implementation("io.vertx:vertx-lang-kotlin-coroutines:$vertxVersion")
     implementation("io.vertx:vertx-lang-kotlin:$vertxVersion")
     implementation("io.vertx:vertx-web-api-contract:$vertxVersion")
-    implementation("io.vertx:vertx-kafka-client:$vertxVersion")
     implementation("com.google.code.gson:gson:2.7")
 
     implementation("io.lettuce:lettuce-core:5.3.3.RELEASE")
@@ -76,6 +75,10 @@ dependencies {
     testImplementation("org.jetbrains.spek:spek-api:1.1.5")
     testImplementation("org.jetbrains.spek:spek-junit-platform-engine:1.1.5")
     testImplementation("org.postgresql:postgresql:42.2.9")
+
+    testImplementation("io.kotest:kotest-runner-junit5:4.2.5") // for kotest framework
+    testImplementation("io.kotest:kotest-assertions-core:4.2.5") // for kotest core jvm assertions
+    testImplementation("io.kotest:kotest-property:4.2.5") // for kotest property test
 }
 
 tasks {
