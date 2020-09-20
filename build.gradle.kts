@@ -66,6 +66,8 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.2.3")
     implementation("ch.qos.logback:logback-core:1.2.3")
 
+    implementation("org.apache.kafka:kafka-clients:2.6.0")
+
     testImplementation("io.mockk:mockk:1.9.3")
     testImplementation("io.vertx:vertx-junit5:$vertxVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion")

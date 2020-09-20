@@ -9,6 +9,7 @@ data class AppConfig(
 	val port: Int,
 	val specPath: String,
 	val redis: RedisConf,
+	val kafka: KafkaConfig,
 )
 
 data class DbConfig(
@@ -17,6 +18,10 @@ data class DbConfig(
 	val user: String,
 	val password: String,
 	val maxPool: Int
+)
+
+data class KafkaConfig(
+	val brokers: String,
 )
 
 data class SwaggerConf(
