@@ -1,0 +1,29 @@
+version: '3'
+services:
+  redis:
+    image: redis:6.0.8-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+  kafka:
+    image: landoop/fast-data-dev:2.5.1
+    ports:
+      - "9092:9092"
+      - "3030:3030"
+    environment:
+      ADV_HOST: localhost
+      SAMPLEDATA: 0
+      CONNECT_HEAP: 1G
+      RUNTESTS: 0
+      DISABLE_JMX: 1
+      BROWSECONFIGS: 1
+    healthcheck:
+      test: >
+        sleep 20
+      interval: 3s
+      timeout: 25s
