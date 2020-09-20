@@ -1,11 +1,11 @@
-# bujo-tracker
+# tracker-cracker
 
-![CI](https://github.com/j0rsa/bujo-tracker/workflows/CI/badge.svg)
+![CI](https://github.com/j0rsa/tracker-cracker/workflows/CI/badge.svg)
 
 Enable Swagger UI for runs within IDE:
     
     ./gradlew copySwaggerToOut
 
-Database:
+Architecture:
 
-![db diagram](http://www.plantuml.com/plantuml/png/5Son4S8m30NGdYbW02ngggmYopgIO5ivwUjOdwHwtLi2xCZHRuzjIi-cwVs-0aUyYPn_vRDXpPgXBZQX4qLiqFxoOAgvsnFEybMdmO6JPaAjbkCw5vtjz0y0)
+![use case diagram](doc/use_case.png)

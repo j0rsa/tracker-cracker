@@ -48,5 +48,5 @@ jobs:
         namespace: bujo-prod
         manifests: deployment/manifest.yaml
         images: |
-          j0rsa/bujo-tracker:${{ steps.vars.outputs.sha_short }}
+          j0rsa/tracker-cracker:${{ steps.vars.outputs.sha_short }}
     

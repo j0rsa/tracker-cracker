@@ -1,2 +1,2 @@
-rootProject.name = "bujo-tracker"
+rootProject.name = "tracker-cracker"
 
