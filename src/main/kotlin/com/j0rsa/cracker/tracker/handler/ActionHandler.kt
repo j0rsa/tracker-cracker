@@ -24,7 +24,7 @@ object ActionHandler {
 		}.map { Response(CREATED, it) }
 	}
 
-	fun CommandSyntax.createWithTags(req: RoutingContext): Either<TrackerError, Response<ActionId>> =
+	fun EventSyntax.createWithTags(req: RoutingContext): Either<TrackerError, Response<ActionId>> =
 		process<TagActionCreated>(req.toTagAction())
 				.map { Response(CREATED, it.actionId) }
 
