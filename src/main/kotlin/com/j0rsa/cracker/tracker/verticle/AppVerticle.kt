@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 import kotlin.reflect.KFunction1
 
 class AppVerticle : CoroutineVerticle() {
-	private val commandHandler = CommandSyntax(vertx)
+	private val commandHandler = EventSyntax(AppEventBus)
 
 	override suspend fun start() {
 		TransactionManager.migrate()

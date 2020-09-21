@@ -22,6 +22,8 @@ data class DbConfig(
 
 data class KafkaConfig(
 	val brokers: String,
+	val consumerGroup: String,
+	val eventTopic: String,
 )
 
 data class SwaggerConf(

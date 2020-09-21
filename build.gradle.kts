@@ -52,7 +52,7 @@ dependencies {
     implementation("io.vertx:vertx-lang-kotlin-coroutines:$vertxVersion")
     implementation("io.vertx:vertx-lang-kotlin:$vertxVersion")
     implementation("io.vertx:vertx-web-api-contract:$vertxVersion")
-    implementation("com.google.code.gson:gson:2.7")
+    implementation("com.google.code.gson:gson:2.8.6")
 
     implementation("io.lettuce:lettuce-core:5.3.3.RELEASE")
 
